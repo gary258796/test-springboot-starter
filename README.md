@@ -34,6 +34,9 @@ How to use and verify:
     Watch logs from console, and see what you get.
 
     ```
+    @Autowired
+	  private Environment environment;
+   
     @Value("${gary.name}")
    private String myName;
    
@@ -43,6 +46,7 @@ How to use and verify:
     public void tryGreet() {
         System.out.println("Your name is : " + myName);
         System.out.println(greeter.greet());
+        System.out.println("resolveException : " + environment.getProperty("spring.mvc.log-resolved-exception"));
    }
     ```
 
